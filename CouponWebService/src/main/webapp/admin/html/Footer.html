@@ -1,0 +1,116 @@
+<!-- Pointer template for the admin page. Appears by the directive named myDirective -->
+<head>
+</head>
+<script type="text/javascript">
+	$('section.awSlider .carousel').carousel({
+		pause : "hover",
+		interval : 2000
+	});
+
+	var startImage = $('section.awSlider .item.active > img').attr('src');
+	$('section.awSlider').append('<img src="' + startImage + '">');
+
+	$('section.awSlider .carousel').on('slid.bs.carousel', function() {
+		var bscn = $(this).find('.item.active > img').attr('src');
+		$('section.awSlider > img').attr('src', bscn);
+	});
+</script>
+
+	<div ng-controller="MyController" style="float: left; margin: 5%">
+		<fusioncharts width="500px" height="300px" type="column2d"
+			dataFormat="json" dataSource="{{dataSource}}"> </fusioncharts>
+	</div>
+	<!-- ********************************* carousel section in admin page************************ -->
+	<section class="awSlider">
+		<div class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target=".carousel" data-slide-to="0" class="active"></li>
+				<li data-target=".carousel" data-slide-to="1"></li>
+				<li data-target=".carousel" data-slide-to="2"></li>
+				<li data-target=".carousel" data-slide-to="3"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<img src="image/holiday.jpg" width="600px" height="345px"
+						alt="holiday">
+					<div class="carousel-caption">Görsel #1</div>
+				</div>
+				<div class="item">
+					<img src="image/ChristmasTown.jpg" width="600px" height="345px"
+						alt="ChristmasTown">
+					<div class="carousel-caption">Görsel #2</div>
+				</div>
+				<div class="item">
+					<img src="image/holiday.jpg" width="600px" height="345px"
+						alt="holiday">
+					<div class="carousel-caption">Görsel #3</div>
+				</div>
+				<div class="item">
+					<img src="image/christmas.jpg" width="600px" height="345px"
+						alt="christmas">
+					<div class="carousel-caption">Görsel #4</div>
+				</div>
+			</div>
+
+			<!-- Controls -->
+			<a class="left carousel-control" href=".carousel" role="button"
+				data-slide="prev"> <span
+				class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Geri</span>
+			</a> <a class="right carousel-control" href=".carousel" role="button"
+				data-slide="next"> <span
+				class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">İleri</span>
+			</a>
+		</div>
+	</section>
+
+	<br>
+	<br>
+	<footer class="container-fluid text-center">
+		<p1 style="letter-spacing: 5px; font-size: 18px;text-align: center;">Coupon
+		System - Desing Pattern</p1>
+		<br>
+		<p1 style="text-align: center"> provide a unified inerface to sa
+		set of interface in a subsystem. Facade defined a higher-level
+		interface that makes the subsystem easier to use.</p1>
+		<br> <br>
+		<table style="padding: 30px;">
+			<tr>
+				<img alt="FOOD" src="image/foodicon.png"
+					style="width: 100px; height: 100px; padding: 15px;">
+			</tr>
+			<tr>
+				<img src="image/health.png" alt="HEALTH"
+					style="width: 100px; height: 100px; padding: 15px;">
+			</tr>
+			<tr>
+				<img alt="SPORT" src="image/sport.png"
+					style="width: 100px; height: 100px; padding: 15px;">
+			</tr>
+			<tr>
+				<img alt="ELECTRICITY" src="image/electricity1.png"
+					style="width: 100px; height: 100px; padding: 15px;">
+			</tr>
+			<tr>
+				<img alt="CAMPING" src="image/camping1.png"
+					style="width: 100px; height: 100px; padding: 15px;">
+			</tr>
+			<tr>
+				<img alt="TRAVEL" src="image/tavel.png"
+					style="width: 100px; height: 100px; padding: 15px;">
+			</tr>
+			<tr>
+				<img alt="RESTAURANT" src="image/RESTAURANT.png"
+					style="width: 100px; height: 100px; padding: 15px;">
+			</tr>
+		</table>
+
+		<p1 style="text-align: center;">All rights reserved © 2017 Coupon
+		System Project</p1>
+		<br> <img src="image/logo2.png" alt="Coupon System"
+			style="float: center; width: 70px; height: 30px;">
+	</footer>

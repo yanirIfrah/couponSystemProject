@@ -1,0 +1,75 @@
+<!-- gel coupon bt date html page -->
+<h2 style="text-align: left">Get Your Coupon By Coupon Expierd DATE</h2>
+<table1 style="float:left;">
+<tr>
+	<a href="#/home"><img alt="home" src="image/home.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.facebook.com" target="blank"><img
+		alt="facebook" src="image/facebook.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.linkedin.com" target="blank"><img
+		alt="linkedin" src="image/linkedin.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.twitter.com" target="blank"><img alt="twitter"
+		src="image/twitter.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+</table1>
+<br>
+<br>
+<hr class="style17">
+<p style="text-align: left">Please enter the coupon expiration date
+	to search for :</p>
+<form>
+	<table1>
+	<td><input class="w3-input w3-border w3-round-large" id="eDate"
+		style="width: 30%; float: left" type="date" ng-model="gd.endDate"
+		required>
+		<button class="w3-btn w3-white w3-border w3-round-large" type="submit"
+			style="float: left" ng-click="gd.getDate()">Get Coupons</button></td>
+	</table1>
+</form>
+<br>
+<br>
+<br>
+<div style="overflow-x: auto; width: 900px;">
+	<table width="900px">
+		<caption>Table 2.6 All Company Coupons by end date</caption>
+		<tr background-color="#757575">
+			<th ng-click="gd.setOrder('id')">ID</th>
+			<th>TITLE</th>
+			<th>START DATE</th>
+			<th>END DATE</th>
+			<th>AMOUNT</th>
+			<th ng-click="gd.setOrder('type')">TYPE</th>
+			<th ng-click="gd.setOrder('price')">PRICE</th>
+			<th>MESSAGE</th>
+			<th>IMAGE</th>
+		</tr>
+
+		<tr ng-repeat="c in gd.couponsDate | orderBy : gd.orderB : gd.goUp">
+			<td>{{c.id}}</td>
+			<td>{{c.title}}</td>
+			<td>{{c.startDate}}</td>
+			<td>{{c.endDate}}</td>
+			<td>{{c.amount}}</td>
+			<td>{{c.type}}</td>
+			<td>{{c.price}}</td>
+			<td>{{c.message}}</td>
+			<td>{{c.image}}</td>
+		</tr>
+	</table>
+</div>
+<br>
+<br>
+<div style="text-align: left">
+	<b>TIP</b>: you can arrange the table in ascending and descending order
+	by:<b>ID</b>, <b>TYPE</b>, and<b>PRICE</b>, by clicking the column
+	header
+</div>

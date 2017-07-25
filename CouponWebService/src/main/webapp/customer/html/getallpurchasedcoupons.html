@@ -1,0 +1,61 @@
+<h2>All Coupons</h2>
+<table1 style="float:left;">
+<tr>
+	<a href="#/home"><img alt="home" src="image/home.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.facebook.com" target="blank"><img
+		alt="facebook" src="image/facebook.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.linkedin.com" target="blank"><img
+		alt="linkedin" src="image/linkedin.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.twitter.com" target="blank"><img alt="twitter"
+		src="image/twitter.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+</table1>
+<br>
+<br>
+<br>
+<hr class="style17">
+<p style="text-align: left">View your list of coupons you've
+	purchased</p>
+<div style="overflow-x: auto; width: 900px;">
+	<table width="800px">
+		<caption>Table 1.0 All Customer History Purchased Coupons</caption>
+		<tr background-color="#757575">
+			<th ng-click="g.setOrder('id')">ID</th>
+			<th>TITLE</th>
+			<th>START DATE</th>
+			<th>END DATE</th>
+			<th ng-click="g.setOrder('type')">TYPE</th>
+			<th ng-click="g.setOrder('price')">PRICE</th>
+			<th>MESSAGE</th>
+			<th>IMAGE</th>
+		</tr>
+
+		<tr ng-repeat="c in g.mycoupons | orderBy : g.orderB : g.goUp ">
+			<td>{{c.id}}</td>
+			<td>{{c.title}}</td>
+			<td>{{c.startDate}}</td>
+			<td>{{c.endDate}}</td>
+			<td>{{c.type}}</td>
+			<td>{{c.price}}</td>
+			<td>{{c.message}}</td>
+			<td>{{c.image}}</td>
+		</tr>
+	</table>
+</div>
+<br>
+<br>
+<div style="text-align: left">
+	<b>TIP</b>: you can arrange the table in ascending and descending order
+	by:<b>ID</b>, <b>TYPE</b>, and<b> PRICE</b>, by clicking the column
+	header
+</div>

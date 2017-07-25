@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styleLogin.css">
+
+<title>Coupon System Login</title>
+</head>
+<body onload="CheckForCookies()">
+	<!-- onload mwthos gor checking after cookies in tje client browser/ if we faind cookies
+	 theh metch to userName,clientType and password, we put the value of the cookies in the 
+	 form field and call the submit.click method.-->
+	<script language="javascript">
+		function CheckForCookies() {
+			var cookies = document.cookie;
+			//split the cookie array to array with 6 values
+			parts = document.cookie.split("; ").join(" ").split("=").join(" ")
+					.split(" ");
+			if (cookies != "") {
+				document.login.userName.value = parts[1];
+				document.login.password.value = parts[3];
+				document.login.clientType.value = parts[5];
+				document.forms["login"].submit.click();
+			}
+		}
+	</script>
+	<div class="col-md-4">
+		<h1>Coupon System</h1>
+	</div>
+	<div class="container">
+		<div class="inner">
+			<h1>Login</h1>
+			<h3>Welcome - Please login in with your details</h3>
+
+			<form action="http://localhost:8080/CouponWebService/LoginServlet"
+				method="POST" name="login">
+				<lagend>Login to your account</lagend>
+				<br> <label><span class="glyphicon glyphicon-lock"></span></label>
+				<select class="input" name="clientType" id="clientType"
+					required="required">
+					<option>ADMIN</option>
+					<option>COMPANY</option>
+					<option>CUSTOMER</option>
+				</select> <label><span class="glyphicon glyphicon-user"></span></label> <input
+					type="text" name="userName" id="userName" placeholder="User Name"
+					class="input" required="required" /><br> <label><span
+					class="glyphicon glyphicon-lock"></span></label> <input type="password"
+					placeholder="password" name="password" id="password" class="input"
+					required="required" /><br>
+				<button type="submit" name="submit" class="button">Sign in</button>
+			</form>
+
+		</div>
+	</div>
+</body>

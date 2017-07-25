@@ -1,0 +1,68 @@
+<!-- gel coupon bt id html page -->
+<h2 style="text-align: left">Get coupon by ID</h2>
+<table1 style="float:left;">
+<tr>
+	<a href="#/home"><img alt="home" src="image/home.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.facebook.com" target="blank"><img
+		alt="facebook" src="image/facebook.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.linkedin.com" target="blank"><img
+		alt="linkedin" src="image/linkedin.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.twitter.com" target="blank"><img alt="twitter"
+		src="image/twitter.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+</table1>
+<br>
+<br>
+<hr class="style17">
+<p style="text-align: left">Please enter the coupon ID to search for
+	:</p>
+<form ng-submit="gid.onSubmit(theForm.$valid)" name="theForm">
+	<table1>
+	<tr>
+		<input class="w3-input w3-border w3-round-large" type="number"
+			ng-model="gid.id" placeholder="Coupon ID"
+			style="width: 30%; float: left" required>&nbsp;
+		<button class="w3-btn w3-white w3-border w3-round-large"
+			style="float: left" type="submit">Get Coupon</button>
+	</tr>
+	</table1>
+</form>
+<br>
+<br>
+<div style="overflow-x: auto; width: 900px;">
+	<table width="900px">
+		<caption>Table 2.3 Coupon by id</caption>
+		<tr>
+			<th>ID</th>
+			<th>TITLE</th>
+			<th>START DATE</th>
+			<th>END DATE</th>
+			<th>AMOUNT</th>
+			<th>TYPE</th>
+			<th>PRICE</th>
+			<th>MESSAGE</th>
+			<th>IMAGE</th>
+		</tr>
+		<tr>
+			<td>{{gid.coupon.id}}</td>
+			<td>{{gid.coupon.title}}</td>
+			<td>{{gid.coupon.startDate}}</td>
+			<td>{{gid.coupon.endDate}}</td>
+			<td>{{gid.coupon.amount}}</td>
+			<td>{{gid.coupon.type}}</td>
+			<td>{{gid.coupon.price}}</td>
+			<td>{{gid.coupon.message}}</td>
+			<td>{{gid.coupon.image}}</td>
+		</tr>
+	</table>
+</div>

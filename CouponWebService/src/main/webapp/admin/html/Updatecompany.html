@@ -1,0 +1,80 @@
+<!-- update company html page -->
+<h2 style="text-align: left">Update A Company :</h2>
+<table1 style="float:left;">
+<tr>
+	<a href="#/Home"><img alt="home" src="image/home.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.facebook.com" target="blank"><img
+		alt="facebook" src="image/facebook.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.linkedin.com" target="blank"><img
+		alt="linkedin" src="image/linkedin.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.twitter.com" target="blank"><img alt="twitter"
+		src="image/twitter.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+</table1>
+<br>
+<br>
+<hr class="style17">
+<p style="text-align: left">Please fill in your new password and
+	name and click the Update button</p>
+
+<br>
+<div style="overflow-x: auto;">
+	<form ng-submit="upco.onSubmit(theForm.$valid)" name="theForm">
+		<table width="570px">
+			<caption>Table 3.0 All Company For Update</caption>
+			<tr>
+				<th>ID</th>
+				<th ng-click="upco.setOrder('name')">NAME</th>
+				<th>PASSWORD</th>
+				<th>EMAIL</th>
+				<th>EDIT</th>
+				<th>UPDATE</th>
+			</tr>
+			<tr
+				ng-repeat="c in upco.companies | orderBy : upco.orderB : upco.goUp">
+				<td>{{c.id}}</td>
+				<td>{{c.compName}}</td>
+				<td><p ng-show="c.edit == undefined || c.edit == false">{{c.password}}</p>
+					<input ng-show="c.edit ==true"
+					class="w3-input w3-border w3-round-large" type="password"
+					ng-model="upco.updatedCompany.password"
+					placeholder="{{c.password}}" style="width: 80px"
+					required="required"></td>
+				<td><p ng-show="c.edit == undefined || c.edit == false">{{c.email}}</p>
+					<input ng-show="c.edit ==true"
+					class="w3-input w3-border w3-round-large" type="email"
+					ng-model="upco.updatedCompany.email" placeholder="{{c.email}}"
+					style="width: 150px" required="required"></td>
+				<td><button class="w3-btn w3-white w3-border w3-round-large"
+						ng-click="upco.updateMode(c)">EDIT</button></td>
+				<td><button class="w3-btn w3-white w3-border w3-round-large"
+						ng-show="c.edit ==true" type="submit">UPDATE</button></td>
+			</tr>
+		</table>
+	</form>
+</div>
+<div style="text-align: left">
+	<button class="w3-btn w3-white w3-border w3-round-large"
+		ng-click="upco.closeUpdateMode(c)">Close Uodate Mode</button>
+</div>
+<br>
+<br>
+<div>
+	<b>TIP</b>: you can arrange the table in ascending and descending order
+	by:<b> ID</b>,just click the column header
+</div>
+
+<p ng-show="upco.success" style="color: lime; margin-left: 2%">The
+	company was successfully update...!</p>
+<p ng-show="upco.failure" style="color: red; margin-left: 2%">Oops !
+	something went wrong, please try again...</p>

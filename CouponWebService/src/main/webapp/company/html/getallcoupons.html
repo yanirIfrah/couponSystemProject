@@ -1,0 +1,67 @@
+<!-- gel all coupons html page -->
+<h2 style="text-align: left">All Coupons</h2>
+<table1 style="float:left;">
+<tr>
+	<a href="#/home"><img alt="home" src="image/home.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.facebook.com" target="blank"><img
+		alt="facebook" src="image/facebook.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.linkedin.com" target="blank"><img
+		alt="linkedin" src="image/linkedin.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.twitter.com" target="blank"><img alt="twitter"
+		src="image/twitter.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+</table1>
+<br>
+<br>
+<hr class="style17">
+<p style="font-size: 14px; text-align: left">Total Coupons :</p>
+<p style="color: green; font-size: 35px; text-align: left">
+	{{gall.coupons.length}}</p>
+<p style="text-align: left">List Of All Company Coupons</p>
+
+<div style="overflow-x: auto; width: 900px;">
+	<table width="900px">
+		<caption>Table 2.7 All Company Coupons</caption>
+		<tr background-color="#757575">
+			<th ng-click="gall.setOrder('id')">ID</th>
+			<th>TITLE</th>
+			<th>START DATE</th>
+			<th>END DATE</th>
+			<th>AMOUNT</th>
+			<th ng-click="gall.setOrder('type')">TYPE</th>
+			<th ng-click="gall.setOrder('price')">PRICE</th>
+			<th>MESSAGE</th>
+			<th>IMAGE</th>
+		</tr>
+
+		<tr
+			ng-repeat="c in gall.coupons | orderBy : gall.orderB : gall.goUp track by $index">
+			<td>{{c.id}}</td>
+			<td>{{c.title}}</td>
+			<td>{{c.startDate}}</td>
+			<td>{{c.endDate}}</td>
+			<td>{{c.amount}}</td>
+			<td>{{c.type}}</td>
+			<td>{{c.price}}</td>
+			<td>{{c.message}}</td>
+			<td>{{c.image}}</td>
+		</tr>
+	</table>
+</div>
+<br>
+<br>
+<div style="text-align: left">
+	<b>TIP</b>: you can arrange the table in ascending and descending order
+	by:<b> PRICE</b>, <b>TYPE</b>, and<b> ID</b>, by clicking the column
+	header
+</div>

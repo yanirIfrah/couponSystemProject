@@ -1,0 +1,86 @@
+<!-- gel coupon bt type html page -->
+<h2 style="text-align: left">Get Your Coupon By Coupon TYPE</h2>
+<table1 style="float:left;">
+<tr>
+	<a href="#/home"><img alt="home" src="image/home.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.facebook.com" target="blank"><img
+		alt="facebook" src="image/facebook.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.linkedin.com" target="blank"><img
+		alt="linkedin" src="image/linkedin.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.twitter.com" target="blank"><img alt="twitter"
+		src="image/twitter.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+</table1>
+<br>
+<br>
+<hr class="style17">
+<p style="text-align: left">Please Choose The Type Of The Coupon :</p>
+<form ng-submit="gt.onSubmit(theForm.$valid)" name="theForm">
+	<table1>
+	<tr>
+		<td><select class="w3-input w3-border w3-round-large"
+			ng-model="gt.type" style="width: 30%; float: left"
+			required="required">
+				<option value=""></option>
+				<option value="HEALTH">HEALTH</option>
+				<option value="RESTAURANT">RESTURANT</option>
+				<option value="ELECTRICITY">ELECTRICITY</option>
+				<option value="FOOD">FOOD</option>
+				<option value="SPORTS">SPORTS</option>
+				<option value="CAMPING">CAMPING</option>
+				<option value="TRAVELING">TRAVELING</option>
+		</select>
+			<button class="w3-btn w3-white w3-border w3-round-large"
+				style="float: left" type="submit">Get Coupon</button></td>
+	</tr>
+	</table1>
+</form>
+<br>
+<br>
+<br>
+<div style="overflow-x: auto; width: 900px;">
+	<table width="900px">
+		<caption>Table 2.4 All Coupons by type</caption>
+		<tr>
+			<th ng-click="gt.setOrder('type')">TYPE</th>
+			<th ng-click="gt.setOrder('id')">ID</th>
+			<th>TITLE</th>
+			<th>START DATE</th>
+			<th>END DATE</th>
+			<th>AMOUNT</th>
+			<th ng-click="gt.setOrder('price')">PRICE</th>
+			<th>MESSAGE</th>
+			<th>IMAGE</th>
+		</tr>
+
+		<tr ng-repeat="c in gt.coupons | orderBy : gt.orderB : gt.goUp">
+			<td>{{c.type}}</td>
+			<td>{{c.id}}</td>
+			<td>{{c.title}}</td>
+			<td>{{c.startDate}}</td>
+			<td>{{c.endDate}}</td>
+			<td>{{c.amount}}</td>
+			<td>{{c.price}}</td>
+			<td>{{c.message}}</td>
+			<td>{{c.image}}</td>
+		</tr>
+	</table>
+</div>
+<br>
+<br>
+<div style="text-align: left">
+	<b>TIP</b>: you can arrange the table in ascending and descending order
+	by:<b> TYPE</b>, <b>ID</b>, and<b> PRICE</b>, by clicking the column
+	header
+</div>
+

@@ -1,0 +1,94 @@
+<!-- update coupon html page -->
+<h2 style="text-align: left">Update A Coupon :</h2>
+<table1 style="float:left;">
+<tr>
+	<a href="#/home"><img alt="home" src="image/home.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.facebook.com" target="blank"><img
+		alt="facebook" src="image/facebook.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.linkedin.com" target="blank"><img
+		alt="linkedin" src="image/linkedin.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.twitter.com" target="blank"><img alt="twitter"
+		src="image/twitter.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+</table1>
+<br>
+<br>
+<br>
+<hr class="style17">
+<form ng-submit="up.onSubmit(theForm.$valid)"
+		name="theForm">
+<div style="overflow-x:auto; width:950px;">
+	<table width="900px">
+		<caption>Table 2.1 Update Coupons</caption>
+		<tr1>
+		<th ng-click="up.setOrder('id')">ID</th>
+		<th ng-click="up.setOrder('title')">TITLE</th>
+		<th>START DATE</th>
+		<th>END DATE</th>
+		<th>AMOUNT</th>
+		<th ng-click="up.setOrder('type')">TYPE</th>
+		<th>PRICE</th>
+		<th>MESSAGE</th>
+		<th>IMAGE</th>
+		<th>EDIT</th>
+		<th>UPDATE</th>
+		</tr1>
+		<tr ng-repeat="c in up.coupons | orderBy : up.orderB : up.goUp">
+			<td>{{c.id}}</td>
+			<td>{{c.title}}</td>
+			<td>{{c.startDate}}</td>
+			<td><p ng-show="c.edit == undefined || c.edit == false" >{{c.endDate}}</p>
+				<input ng-show="c.edit ==true" id="eDate"
+				class="w3-input w3-border w3-round-large" type="date"
+				ng-model="up.updatedCoupon.endDate" placeholder="{{c.endDate}}"
+				style="width: 100px" required="required"></td>
+			<td>{{c.amount}}</td>
+			<td>{{c.type}}</td>
+			<td><p ng-show="c.edit == undefined || c.edit == false">{{c.price}}</p>
+				<input ng-show="c.edit ==true"
+				class="w3-input w3-border w3-round-large" type="text"
+				ng-model="up.updatedCoupon.price" placeholder="{{c.price}}"
+				style="width: 50px" required="required"></td>
+			<td>{{c.message}}</td>
+			<td>{{c.image}}</td>
+			<td><button class="w3-btn w3-white w3-border w3-round-large"
+					ng-click="up.updateMode(c)" >EDIT</button></td>
+			<td ><button type="submit"ng-show="c.edit == true"
+					class="w3-btn w3-white w3-border w3-round-large"
+					>UPDATE</button></td>
+		</tr>
+	</table>
+</div>
+</form>
+<div style="text-align: left">
+	<button class="w3-btn w3-white w3-border w3-round-large"
+		ng-click="up.closeUpdateMode(c)">Close Update Mode</button>
+</div>
+<br>
+<p ng-show="up.success" style="color: lime; margin-left: 2%">The
+	coupon was successfully update...!</p>
+<p ng-show="up.failure" style="color: red; margin-left: 2%">Oops !
+	something went wrong, please try again...</p>
+<br>
+
+<div style="text-align: left">
+	<b>Note !</b><br>The system allows you to update the coupon PRICE
+	and its EXPIRATION DATE. Please fill out the empty space and click
+	Update to update A specific coupon.
+</div>
+<br>
+<div style="text-align: left">
+	<b>TIP</b>: you can arrange the table in ascending and descending order
+	by:<b> ID</b>, <b>TITLE</b>, and<b> TYPE</b>, by clicking the column
+	header
+</div>

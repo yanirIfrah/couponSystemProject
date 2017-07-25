@@ -1,0 +1,59 @@
+<!-- delete customer html page -->
+<h2 style="text-align: left">Delete Customer</h2>
+<table1 style="float:left;">
+<tr>
+	<a href="#/Home"><img alt="home" src="image/home.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.facebook.com" target="blank"><img
+		alt="facebook" src="image/facebook.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.linkedin.com" target="blank"><img
+		alt="linkedin" src="image/linkedin.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.twitter.com" target="blank"><img alt="twitter"
+		src="image/twitter.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+</table1>
+<br>
+<br>
+<hr class="style17">
+<p style="text-align: left">Click 'DELETE' To Delete A Customer !
+<p>
+	<br>
+<div style="overflow-x: auto;">
+	<table width="280px">
+		<caption>Table 3.5 All Customer For Delete</caption>
+		<tr>
+			<th ng-click="dcu.setOrder('id')">ID</th>
+			<th ng-click="dcu.setOrder('name')">NAME</th>
+			<th>PASSWORD</th>
+			<th>DELETE</th>
+		</tr>
+
+		<tr ng-repeat="c in dcu.customers | orderBy : dcu.orderB : dcu.goUp">
+			<td>{{c.id}}</td>
+			<td>{{c.custName}}</td>
+			<td>{{c.password}}</td>
+			<td><button class="w3-btn w3-white w3-border w3-round-large"
+					ng-click="dcu.deleteCustomer(c)">DELETE</button></td>
+		</tr>
+	</table>
+</div>
+<br>
+<br>
+<div style="text-align: left">
+	<b>Note!</b><br> Before you delete a coupon from your lists,
+	please note: once you delete a coupon, it can not be restored.
+</div>
+<br>
+<div style="text-align: left">
+	<b>TIP</b>: you can arrange the table in ascending and descending order
+	by:<b> ID</b> and<b> NAME</b>, by clicking the column header
+</div>

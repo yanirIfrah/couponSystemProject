@@ -1,0 +1,57 @@
+<!-- get company html page -->
+<h2 style="text-align: left">Search Company by ID :</h2>
+<table1 style="float:left;">
+<tr>
+	<a href="#/Home"><img alt="home" src="image/home.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.facebook.com" target="blank"><img
+		alt="facebook" src="image/facebook.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.linkedin.com" target="blank"><img
+		alt="linkedin" src="image/linkedin.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.twitter.com" target="blank"><img alt="twitter"
+		src="image/twitter.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+</table1>
+<br>
+<br>
+<hr class="style17">
+<p style="text-align: left">Please enter the Company ID to search
+	for :</p>
+<form ng-submit="gco.onSubmit(theForm.$valid)" name="theForm">
+	<table1 style="text-align: left">
+	<td><input class="w3-input w3-border w3-round-large"
+		style="width: 20%; float: left" type="text" ng-model="gco.id"
+		placeholder="Company ID" required
+		onkeypress='return event.charCode >= 48 && event.charCode <= 57'></td>
+	<td><button class="w3-btn w3-white w3-border w3-round-large"
+			type="submit" style="float: left" style="float: right">Get
+			Company</button></td>
+	</table1>
+</form>
+<br>
+<br>
+<br>
+<div style="overflow-x:auto;">
+<table width="470px">
+	<caption>Table 3.2 Company By ID</caption>
+	<tr>
+		<th>ID</th>
+		<th>NAME</th>
+		<th>EMAIL</th>
+	</tr>
+	<tr>
+		<td>{{gco.company.id}}</td>
+		<td>{{gco.company.compName}}</td>
+		<td>{{gco.company.email}}</td>
+	</tr>
+</table>
+</div>

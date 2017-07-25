@@ -1,0 +1,53 @@
+<!-- create customer html page -->
+<h2 style="text-align: left">Create A New Customer</h2>
+<table1 style="float:left;">
+<tr>
+	<a href="#/Home"><img alt="home" src="image/home.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.facebook.com" target="blank"><img
+		alt="facebook" src="image/facebook.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.linkedin.com" target="blank"><img
+		alt="linkedin" src="image/linkedin.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.twitter.com" target="blank"><img alt="twitter"
+		src="image/twitter.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+</table1>
+<br>
+<br>
+<hr class="style17">
+<p style="text-align: left">Please insert the customer details :</p>
+<form>
+	<table1 style="text-align: left">
+	<tr>
+		<td><input class="w3-input w3-border w3-round-large" type="text"
+			style="width: 30%; float: left"
+			onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+			ng-model="ccu.newCustomer.id" placeholder="ID" required /></td>
+		<td><input class="w3-input w3-border w3-round-large"
+			style="width: 30%; float: left" type="text"
+			ng-model="ccu.newCustomer.custName" placeholder="NAME" required /></td>
+		<td><input class="w3-input w3-border w3-round-large"
+			style="width: 30%; float: left" type="password"
+			ng-model="ccu.newCustomer.password" placeholder="PASSWORD" required /></td>
+	</tr>
+	<tr></tr>
+	</table1>
+	<br> <br>
+	<br>
+	<button class="w3-btn w3-white w3-border w3-round-large" type="submit"
+		style="float: left" ng-click="ccu.createCustomer()">Create
+		new Customer</button>
+</form>
+<p ng-show="ccu.success" style="color: lime; margin-left: 2%">Congratulations
+	! A new customer was successfully created...!</p>
+<p ng-show="ccu.failure" style="color: red; margin-left: 2%">Oops...!
+	something went wrong, please try again...</p>

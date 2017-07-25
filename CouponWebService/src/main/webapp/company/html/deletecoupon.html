@@ -1,0 +1,71 @@
+<!-- delete coupon html page -->
+<h2 style="text-align: left">Delete Coupon :</h2>
+<table1 style="float:left;">
+<tr>
+	<a href="#/home"><img alt="home" src="image/home.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.facebook.com" target="blank"><img
+		alt="facebook" src="image/facebook.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.linkedin.com" target="blank"><img
+		alt="linkedin" src="image/linkedin.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.twitter.com" target="blank"><img alt="twitter"
+		src="image/twitter.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+</table1>
+<br>
+<br>
+<br>
+<hr class="style17">
+<p style="text-align: left">Click 'DELETE' To Delete A Coupon !</p>
+<div style="overflow-x: auto; width: 900px;">
+	<table width="900px">
+		<caption>Table 2.2 All Company Coupons For Delete</caption>
+		<tr>
+			<th ng-click="d.setOrder('id')">ID</th>
+			<th>TITLE</th>
+			<th>START DATE</th>
+			<th>END DATE</th>
+			<th>AMOUNT</th>
+			<th ng-click="d.setOrder('type')">TYPE</th>
+			<th ng-click="d.setOrder('price')">PRICE</th>
+			<th>MESSAGE</th>
+			<th>IMAGE</th>
+			<th>DELETE</th>
+		</tr>
+
+		<tr ng-repeat="c in d.coupons | orderBy : d.orderB : d.goUp">
+			<td>{{c.id}}</td>
+			<td>{{c.title}}</td>
+			<td>{{c.startDate}}</td>
+			<td>{{c.endDate}}</td>
+			<td>{{c.amount}}</td>
+			<td>{{c.type}}</td>
+			<td>{{c.price}}</td>
+			<td>{{c.message}}</td>
+			<td>{{c.image}}</td>
+			<td><button class="w3-btn w3-white w3-border w3-round-large"
+					ng-click="d.deleteCoupon(c)">DELETE</button></td>
+		</tr>
+	</table>
+</div>
+<br>
+<br>
+<div style="text-align: left">
+	<b>TIP</b>: you can arrange the table in ascending and descending order
+	by:<b> ID</b>, <b>TYPE</b>, and<b> PRICE</b>, by clicking the column
+	header
+</div>
+<br>
+<p style="text-align: left">
+	<b>Note!</b><br> Before you delete a coupon from your lists,
+	please note: once you delete a coupon, it can not be restored.
+</p>

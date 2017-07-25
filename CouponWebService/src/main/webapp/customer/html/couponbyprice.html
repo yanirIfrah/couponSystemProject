@@ -1,0 +1,61 @@
+<h2 >All Purchase Coupon By Price</h2>
+<table1 style="float:left;">
+  <tr ><a href="#/home"><img  alt="home" src="image/home.png" style=" width: 55px;height: 55px;padding:10px;"></a></tr>
+  <tr ><a href="https://www.facebook.com"target="blank"><img  alt="facebook" src="image/facebook.png" style=" width: 55px;height: 55px;padding:10px;"></a></tr>
+  <tr><a href="https://www.linkedin.com"target="blank"><img alt="linkedin" src="image/linkedin.png" style="width: 55px;height: 55px;padding:10px; "></a></tr>
+  <tr ><a href="https://www.twitter.com" target="blank"><img alt="twitter" src="image/twitter.png" style=" width: 55px;height: 55px;padding:10px;"></a></tr>
+</table1><br><br><br>
+<hr class="style17">
+
+<p style="text-align: left">Please select the Max Prcie Of Coupon
+	You Wish For :</p>
+	<form ng-submit="pr.onSubmit(theForm.$valid)"
+		name="theForm">
+<table1 class="mytable">
+	<td><input class="w3-input w3-border w3-round-large"
+		style="width: 20%;float: left" ng-model="pr.price" placeholder="Max PRICE"
+		onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+		required="required">
+	<button class="w3-btn w3-white w3-border w3-round-large"style="float: left"
+				type="submit" >Get Coupons</button></td>
+</table1></form>
+
+<br>
+<br>
+<div style="overflow-x: auto; width: 950px;">
+<table width="900px">
+	<caption>Table 1.2 All Customer Purchased Coupons By Price</caption>
+	<tr >
+		<th ng-click="pr.setOrder('id')">ID</th>
+		<th>TITLE</th>
+		<th>START DATE</th>
+		<th>END DATE</th>
+		<th ng-click="pr.setOrder('type')">TYPE</th>
+		<th ng-click="pr.setOrder('price')">PRICE</th>
+		<th>MESSAGE</th>
+		<th>IMAGE</th>
+	</tr>
+
+	<tr ng-repeat="c in pr.coupons | orderBy : pr.orderB : pr.goUp">
+		<td>{{c.id}}</td>
+		<td>{{c.title}}</td>
+		<td>{{c.startDate}}</td>
+		<td>{{c.endDate}}</td>
+		<td>{{c.type}}</td>
+		<td>{{c.price}}</td>
+		<td>{{c.message}}</td>
+		<td>{{c.image}}</td>
+	</tr>
+</table>
+</div>
+<br>
+<br>
+<div style="text-align: left">
+	<b>TIP</b>: you can arrange the table in ascending and descending order
+	by:<b> ID</b>, <b>TYPE</b>, and<b> PRICE</b>, by clicking the column
+	header
+</div>
+<div ng-show="pr.success" style="color:white; background-color:#1dfc38;height:30px;border-radius: 20px;  margin-left: 2%">Congratulations,
+	the coupon was successfully create...!</div>
+<div ng-show="pr.failure" style="color:white;background-color: red;border-radius: 20px; margin-left: 2%">Oops !
+	something went wrong, please try again...</div>

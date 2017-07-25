@@ -1,0 +1,58 @@
+<!-- create company html page -->
+<h2 style="text-align: left">Create A New Company</h2>
+<table1 style="float:left;">
+<tr>
+	<a href="#/Home"><img alt="home" src="image/home.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.facebook.com" target="blank"><img
+		alt="facebook" src="image/facebook.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.linkedin.com" target="blank"><img
+		alt="linkedin" src="image/linkedin.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+<tr>
+	<a href="https://www.twitter.com" target="blank"><img alt="twitter"
+		src="image/twitter.png"
+		style="width: 55px; height: 55px; padding: 10px;"></a>
+</tr>
+</table1>
+<br>
+<br>
+<hr class="style17">
+<p style="text-align: left">Please insert the company details :</p>
+<div>
+	<form>
+		<table1  style="text-align: left">
+			<tr>
+				<td><input required class="w3-input w3-border w3-round-large"
+					type="text"style="width: 40%;float: left"
+					onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+					ng-model="cco.newCompany.id" placeholder="ID" /></td>
+				<td><input class="w3-input w3-border w3-round-large"
+					type="text" ng-model="cco.newCompany.compName" placeholder="NAME"style="width: 40%;float: left"
+					required /></td>
+				<td><input class="w3-input w3-border w3-round-large"
+					type="password" ng-model="cco.newCompany.password"style="width: 40%;float: left"
+					placeholder="PASSWORD" required /></td><br>
+				<td><input class="w3-input w3-border w3-round-large"
+					type="email" ng-model="cco.newCompany.email" placeholder="E-MAIL"style="width: 40%;float: left"
+					required /></td>
+			</tr>
+		</table1>
+		<br>
+		<br> <br> <br>
+		<button class="w3-btn w3-white w3-border w3-round-large"
+						type="submit" style="float: left" ng-click="cco.createCompany()">Create
+						new Company</button>
+	</form>
+</div>
+
+	<p ng-show="cco.success" style="color: lime; margin-left: 2%">Congratulations,
+		Company was successfully created...!</p>
+	<p ng-show="cco.failure" style="color: red; margin-left: 2%">Oops !
+		something went wrong, please try again...</p>
